@@ -16,8 +16,8 @@ function css(){
 }
 function watchFiles(){
     gulp.watch('scss/*.scss', css);
-
+    gulp.watch('index.html');
 }
 
 gulp.task('css', css);
-gulp.task('watch', watchFiles);
+gulp.task('watch', gulp.parallel(watchFiles));
